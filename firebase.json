@@ -5,7 +5,18 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
-  "functions": [],
+  "functions": [
+    {
+      "kit": "test-func-kit",
+      "source": "local-kit/package",
+      "instances": {
+        "test-func-kit": "function-kits/test-func-kit/config-test-func-kit"
+      },
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
   "hosting": {
     "public": "public",
     "ignore": [
