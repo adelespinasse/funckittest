@@ -21,6 +21,19 @@
         "npm --prefix \"$RESOURCE_DIR\" run lint",
         "npm --prefix \"$RESOURCE_DIR\" run build"
       ]
+    },
+    {
+      "kit": "test-func-kit",
+      "sourcePackage": {
+        "name": "@aldel/test-func-kit"
+      },
+      "source": "function-kits/test-func-kit/source",
+      "instances": {
+        "test-func-kit": "function-kits/test-func-kit/config-test-func-kit"
+      },
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
     }
   ],
   "hosting": {
